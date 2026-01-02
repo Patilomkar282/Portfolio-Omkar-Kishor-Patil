@@ -39,7 +39,7 @@ export default function About() {
               {/* Image Placeholder */}
               <div className="absolute inset-4 rounded-full bg-slate-800 overflow-hidden flex items-center justify-center border border-white/10 group">
                 <User className="w-32 h-32 text-muted-foreground/50 group-hover:text-primary transition-colors duration-500" />
-                <img src="../images/profile.jpeg" alt="Profile" className="w-full h-full object-cover" />
+                <img src="/images/profile.jpeg" alt="Profile" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
                   <span className="text-primary font-bold">Hello World!</span>
                 </div>
