@@ -134,7 +134,7 @@ export default function Hero() {
 
           <Button
             asChild
-            className="group relative px-8 py-6 text-lg font-bold overflow-hidden rounded-full bg-white text-foreground border-2 border-slate-200 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 hover:border-primary/50"
+            className="group relative px-8 py-6 text-lg font-bold overflow-hidden rounded-full bg-white/5 text-foreground border border-white/10 shadow-xl hover:shadow-2xl hover:bg-white/10 hover:scale-105 transition-all duration-300 hover:border-primary/50 backdrop-blur-sm"
           >
             <a href="https://drive.google.com/file/d/1nzENDlgQpmfxLIcEWqCCtdgXxw1qiDSE/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               <span className="relative z-10 flex items-center gap-2">
@@ -154,8 +154,8 @@ export default function Hero() {
               <a
                 key={idx}
                 href={social.href}
-                className="p-4 rounded-full bg-white text-foreground border border-slate-200 shadow-md
-                           hover:text-primary hover:border-primary hover:shadow-lg
+                className="p-4 rounded-full bg-white/5 text-muted-foreground border border-white/10 shadow-md backdrop-blur-sm
+                           hover:text-primary hover:border-primary hover:shadow-lg hover:bg-white/10
                            transition-all duration-300 hover:scale-110"
               >
                 <social.icon className="w-6 h-6" />
@@ -169,17 +169,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center w-full max-w-5xl mx-auto bg-white/40 backdrop-blur-xl p-8 rounded-3xl border border-white/60 shadow-lg"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center w-full max-w-5xl mx-auto bg-white/5 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-lg"
         >
           {[
             { value: "9.60", label: "CGPA", color: "text-primary" },
-            { value: "2+", label: "Years Experience", color: "text-blue-600" },
-            { value: "10+", label: "Projects", color: "text-purple-600" },
+            { value: "2+", label: "Years Experience", color: "text-blue-500" },
+            { value: "10+", label: "Projects", color: "text-purple-500" },
             { value: "5+", label: "Technologies", color: "text-orange-500" }
           ].map((stat, idx) => (
             <div key={idx} className="p-4">
               <div className={`text-4xl font-black ${stat.color} mb-1`}>{stat.value}</div>
-              <div className="text-sm text-slate-600 font-bold uppercase tracking-wide">{stat.label}</div>
+              <div className="text-sm text-muted-foreground font-bold uppercase tracking-wide">{stat.label}</div>
             </div>
           ))}
         </motion.div>

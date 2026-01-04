@@ -4,7 +4,7 @@ import { User, Code, GraduationCap } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-secondary/10 relative overflow-hidden">
+    <section id="about" className="py-24 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl -z-10" />

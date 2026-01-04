@@ -21,7 +21,7 @@ const Marquee = ({ skills, direction = "left", speed = 20 }) => {
                     return (
                         <div key={index} className="flex flex-col items-center gap-3 group/icon cursor-pointer">
                             <div
-                                className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-2xl bg-white shadow-lg border border-slate-100 group-hover/icon:scale-110 group-hover/icon:shadow-xl transition-all duration-300"
+                                className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-lg group-hover/icon:scale-110 group-hover/icon:shadow-primary/20 transition-all duration-300"
                             >
                                 {Icon &&
                                     <Icon
@@ -29,7 +29,7 @@ const Marquee = ({ skills, direction = "left", speed = 20 }) => {
                                         style={{ color: skill.color }} // Always use brand color for "extraordinary" look
                                     />}
                             </div>
-                            <span className="text-sm font-medium text-slate-600 group-hover/icon:text-primary transition-colors">
+                            <span className="text-sm font-medium text-slate-300 group-hover/icon:text-primary transition-colors">
                                 {skill.name}
                             </span>
                         </div>
@@ -67,7 +67,7 @@ export default function Skills() {
     const secondHalf = skills.slice(Math.ceil(skills.length / 2));
 
     return (
-        <section id="skills" className="py-24 bg-background relative overflow-hidden">
+        <section id="skills" className="py-24 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

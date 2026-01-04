@@ -30,7 +30,7 @@ export default function Achievements() {
   }, []);
 
   return (
-    <section id="achievements" className="py-24 bg-background relative overflow-hidden">
+    <section id="achievements" className="py-24 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] -z-10" />
 
@@ -59,12 +59,12 @@ export default function Achievements() {
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
         >
           {stats.map((stat, index) => (
-            <div key={index} className="glass p-6 rounded-xl hover:border-primary/30 transition-colors text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-secondary/50 text-primary mb-3">
-                <stat.icon className="w-6 h-6" />
+            <div key={index} className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl hover:border-primary/50 transition-colors text-center shadow-lg group">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/20 text-primary mb-4 shadow-[0_0_15px_rgba(var(--primary),0.3)] group-hover:scale-110 transition-transform duration-300">
+                <stat.icon className="w-7 h-7" />
               </div>
-              <div className="text-3xl font-bold text-foreground mb-1">{stat.value}</div>
-              <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
+              <div className="text-4xl font-black text-white mb-1 tracking-tight">{stat.value}</div>
+              <div className="text-sm text-slate-400 font-bold uppercase tracking-wider">{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -93,37 +93,37 @@ export default function Achievements() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   className={`
-                    relative p-8 rounded-2xl group transition-all duration-300
+                    relative p-8 rounded-3xl group transition-all duration-300 border
                     ${isHackathonWin
-                      ? "bg-gradient-to-br from-yellow-500/10 to-amber-500/10 border border-yellow-500/50 shadow-[0_0_30px_rgba(234,179,8,0.2)] md:col-span-2 lg:col-span-1 lg:row-span-2 scale-105 z-10"
-                      : "glass hover:bg-secondary/20 border-none"
+                      ? "bg-gradient-to-br from-yellow-500/10 via-black/60 to-black/40 border-yellow-500/50 shadow-[0_0_40px_rgba(234,179,8,0.2)] hover:shadow-[0_0_60px_rgba(234,179,8,0.4)] md:col-span-2 lg:col-span-1 lg:row-span-2 z-10"
+                      : "bg-black/40 backdrop-blur-md border-white/10 hover:border-primary/50 hover:bg-black/60 shadow-lg"
                     }
                   `}
                 >
                   {isHackathonWin && (
-                    <div className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-500 to-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1 animate-pulse">
+                    <div className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-500 to-amber-600 text-white text-xs font-black uppercase tracking-wider px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1 animate-pulse border border-yellow-300">
                       <Star className="w-3 h-3 fill-current" /> Winner
                     </div>
                   )}
 
                   <div className="flex items-start justify-between mb-6">
-                    <div className={`p-3 rounded-lg ${isHackathonWin ? "bg-yellow-500/20 text-yellow-500" : "bg-primary/10 text-primary"}`}>
+                    <div className={`p-3 rounded-2xl ${isHackathonWin ? "bg-yellow-500/20 text-yellow-500 shadow-[0_0_20px_rgba(234,179,8,0.3)]" : "bg-white/5 text-primary border border-white/10"}`}>
                       <Icon className="w-8 h-8" />
                     </div>
-                    <span className={`px-3 py-1 rounded-full text-xs font-bold border ${isHackathonWin ? "bg-yellow-500/10 text-yellow-500 border-yellow-500/20" : "bg-white/5 text-muted-foreground border-white/5"}`}>
+                    <span className={`px-3 py-1 rounded-full text-xs font-bold border font-mono ${isHackathonWin ? "bg-yellow-500/10 text-yellow-500 border-yellow-500/30" : "bg-white/5 text-slate-400 border-white/10"}`}>
                       {achievement.category}
                     </span>
                   </div>
 
-                  <h3 className={`text-xl font-bold mb-2 transition-colors ${isHackathonWin ? "text-yellow-500" : "text-foreground group-hover:text-primary"}`}>
+                  <h3 className={`text-2xl font-black mb-3 transition-colors tracking-tight ${isHackathonWin ? "text-white" : "text-white group-hover:text-primary"}`}>
                     {achievement.title}
                   </h3>
                   {achievement.organization && (
-                    <p className={`text-sm mb-3 font-medium ${isHackathonWin ? "text-amber-400" : "text-primary"}`}>
+                    <p className={`text-sm mb-4 font-bold uppercase tracking-wide ${isHackathonWin ? "text-yellow-400" : "text-primary/90"}`}>
                       {achievement.organization}
                     </p>
                   )}
-                  <p className="text-muted-foreground leading-relaxed mb-4">
+                  <p className="text-slate-400 leading-relaxed mb-6 font-medium">
                     {achievement.description}
                   </p>
 
@@ -133,11 +133,14 @@ export default function Achievements() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`
-                        inline-flex items-center gap-2 text-sm font-bold bg-secondary/30 hover:bg-primary hover:text-white px-4 py-2 rounded-lg transition-all duration-300
-                        ${isHackathonWin ? "bg-yellow-500/10 text-yellow-600 hover:bg-yellow-500 hover:text-white mt-2" : "text-primary"}
+                        inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-xl transition-all duration-300 border
+                        ${isHackathonWin
+                          ? "bg-yellow-500/20 text-yellow-500 border-yellow-500/50 hover:bg-yellow-500 hover:text-white mt-auto w-full justify-center"
+                          : "bg-white/5 text-white border-white/10 hover:bg-white/10 hover:border-white/30"
+                        }
                       `}
                     >
-                      View Certificate <ExternalLink className="w-3 h-3" />
+                      View Certificate <ExternalLink className="w-4 h-4" />
                     </a>
                   )}
                 </motion.div>

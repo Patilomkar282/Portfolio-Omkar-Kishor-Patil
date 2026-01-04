@@ -89,7 +89,7 @@ function TiltCard({ children, className }) {
 
 export default function Education() {
     return (
-        <section id="education" className="py-24 bg-background relative overflow-hidden">
+        <section id="education" className="py-24 relative overflow-hidden">
             {/* Background Decoration */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-[10%] left-[-5%] w-[300px] h-[300px] rounded-full bg-blue-500/5 blur-[80px]" />

@@ -9,6 +9,7 @@ import Achievements from "../components/Achivements";
 import Contact from "../components/Contact";
 import Spotlight from "../components/Spotlight";
 import Education from "../components/Education";
+import Background from "../components/Background";
 
 function Home() {
     // Smooth scroll behavior
@@ -20,7 +21,8 @@ function Home() {
     }, []);
 
     return (
-        <div className="bg-background min-h-screen text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-primary-foreground cursor-none">
+        <div className="dark min-h-screen text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-primary-foreground cursor-none">
+            <Background />
             <Spotlight />
             <FloatingDock />
 
